@@ -92,6 +92,7 @@ class MainActivity : AppCompatActivity() {
             adapterlistView.notifyDataSetChanged()
         }
     }
+
     fun cargarListaproducto(){
 
         // val productos= arrayOf("LAPTOP", "MOUSE")
