@@ -19,75 +19,82 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="0dp">
 
-        <com.google.android.material.textview.MaterialTextView
+        <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="Calcular IVA de producto"
-            android:textSize="25sp" />
+            android:textSize="25dp" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textNombre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:hint="NOMBRE DE PRODUCTO"
+            app:helperText="Ingrese el nombre del producto">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre del Producto"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textPrecio"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:hint="PRECIO DE PRODUCTO"
+            app:helperText="Ingrese el precio del producto">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="PRECIO DE PRODUCTO"
                 android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textview.MaterialTextView
+        <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lista de Paises:" />
-
+            android:text="LIsta de Paises:" />
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textPaises"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:hint="Seleccionar País">
 
-            <androidx.appcompat.widget.AppCompatSpinner
+            <Spinner
                 android:id="@+id/spPaises"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:backgroundTint="?attr/colorControlHighlight"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
+
+        <Button
             android:id="@+id/btnCalcularIVA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Calcular" />
 
-        <com.google.android.material.textview.MaterialTextView
+        <TextView
             android:id="@+id/tvResultado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Resultado" />
+            android:text="TextView" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView
         android:id="@+id/listaProductos"
-        android:layout_width="355dp"
-        android:layout_height="194dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
