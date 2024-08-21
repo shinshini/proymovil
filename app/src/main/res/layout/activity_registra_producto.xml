@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="16dp"
+            android:fontFamily="sans-serif-black"
             android:text="Registrar Producto"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
@@ -31,7 +32,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre del producto">
+            android:hint="Nombre del producto"
+            app:helperText="Ingrese el nombre del producto">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -43,7 +45,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descripción">
+            android:hint="Descripción"
+            app:helperText="Ingrese la descripcion del producto">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -60,7 +63,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                app:helperText="Ingrese el precio del producto"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Botón de registrar -->
