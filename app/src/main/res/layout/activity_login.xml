@@ -76,12 +76,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/elevatedButton"
+            android:id="@+id/btn_ingresar"
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color4"
-            android:backgroundTint="@null"
+            android:background="@drawable/caja"
+            app:backgroundTint="@null"
             android:text="INICIO" />
 
     </LinearLayout>

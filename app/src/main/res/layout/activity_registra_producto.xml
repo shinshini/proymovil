@@ -58,13 +58,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Precio">
+            android:hint="Precio"
+            app:helperText="Ingrese el precio del producto">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                app:helperText="Ingrese el precio del producto"/>
+              />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Botón de registrar -->
@@ -73,6 +74,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
-            android:text="Registrar" />
+            android:background="@drawable/caja"
+            android:fontFamily="sans-serif-black"
+            android:text="Registrar"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@null" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

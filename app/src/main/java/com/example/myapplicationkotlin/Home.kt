@@ -1,12 +1,18 @@
 package com.example.myapplicationkotlin
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class Home : AppCompatActivity() {
+
+    lateinit var btnIvaPro: CardView
+    lateinit var btnPro: CardView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,5 +22,27 @@ class Home : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        cargarR()
+
+        estadoBoton()
+
+    }
+
+    fun cargarR(){
+        btnIvaPro = findViewById(R.id.btn_calcularIVA)
+        btnPro = findViewById(R.id.btn_producto)
+    }
+
+    fun estadoBoton(){
+        btnIvaPro.setOnClickListener{
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+
+        }
+        btnPro.setOnClickListener{
+            val i = Intent(this, Registra_producto::class.java)
+            startActivity(i)
+    }
+
     }
 }
