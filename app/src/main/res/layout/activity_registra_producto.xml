@@ -32,28 +32,31 @@
         <!-- Campo de nombre del producto -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Codigo"
+            app:helperText="Ingrese el codugio de producto">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_codigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre del producto"
             app:helperText="Ingrese el nombre del producto">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo de descripción -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Descripción"
-            app:helperText="Ingrese la descripcion del producto">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo de precio -->
         <com.google.android.material.textfield.TextInputLayout
@@ -63,6 +66,7 @@
             app:helperText="Ingrese el precio del producto">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_precio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal" />
@@ -70,6 +74,7 @@
 
         <!-- Botón de registrar -->
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_registrarProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
