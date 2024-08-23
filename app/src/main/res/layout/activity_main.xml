@@ -79,6 +79,10 @@
             android:id="@+id/btnCalcularIVA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/caja"
+            app:backgroundTint="@null"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
             android:text="Calcular" />
 
         <TextView
