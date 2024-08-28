@@ -2,7 +2,6 @@ package com.example.myapplicationkotlin
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -40,7 +39,7 @@ class Home : AppCompatActivity() {
 
         }
         btnPro.setOnClickListener{
-            val i = Intent(this, Registra_producto::class.java)
+            val i = Intent(this, RegistraProductos::class.java)
             startActivity(i)
     }
 

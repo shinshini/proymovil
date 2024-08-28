@@ -2,22 +2,11 @@ package com.example.myapplicationkotlin.model
 
 class Productos constructor(nombre:String, precio:Double) {
 
-    var nombre: String = nombre
-        get() = field // 'field' es el respaldo de la propiedad, no necesitas modificar esto si no tienes lógica adicional.
-        set(value) {
-            field = value
-            // Aquí puedes agregar lógica si lo necesitas, como validaciones.
-        }
+    var nombre:String = nombre
+    var precio:Double = precio
 
-    var precio: Double = precio
-        get() = field
-        set(value) {
-            field = value
-            // Agrega cualquier lógica adicional para manejar cambios en el precio.
-        }
-
-    fun calIVA(iva: Double): Double {
-        return precio * iva
+    fun calIVA(iva:Double): Double{
+        val total:Double =precio * iva
+        return total
     }
-
 }
