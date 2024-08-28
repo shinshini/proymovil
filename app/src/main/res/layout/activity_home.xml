@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color1"
+    android:background="@color/color2"
     tools:context=".Home">
 
     <TextView
@@ -51,7 +51,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
 
-            app:cardBackgroundColor="@color/color2"
+            app:cardBackgroundColor="@color/color1"
             android:layout_marginBottom="10dp"
             android:foreground="?selectableItemBackground"
             app:cardCornerRadius="8dp"
@@ -92,7 +92,7 @@
             android:foreground="?selectableItemBackground"
             app:cardCornerRadius="8dp"
             app:cardElevation="6dp"
-            app:cardBackgroundColor="@color/color2"
+            app:cardBackgroundColor="@color/color1"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1">
 
@@ -129,7 +129,7 @@
             android:foreground="?selectableItemBackground"
             app:cardCornerRadius="8dp"
             app:cardElevation="6dp"
-            app:cardBackgroundColor="@color/color2"
+            app:cardBackgroundColor="@color/color1"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1">
 
@@ -166,7 +166,7 @@
             android:foreground="?selectableItemBackground"
             app:cardCornerRadius="8dp"
             app:cardElevation="6dp"
-            app:cardBackgroundColor="@color/color2"
+            app:cardBackgroundColor="@color/color1"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1">
 

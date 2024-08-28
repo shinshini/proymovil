@@ -54,11 +54,25 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnbuscarproducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/caja"
+            android:fontFamily="sans-serif-black"
+            android:text="Buscar Producto"
+            android:textColor="@color/black"
+            app:backgroundTint="@null" />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LIsta de Paises:" />
+            android:text="LIsta de Paises:"
+            android:textSize="20sp" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textPaises"
             android:layout_width="match_parent"
@@ -69,9 +83,9 @@
                 android:id="@+id/spPaises"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:spinnerMode="dropdown"
                 android:backgroundTint="?attr/colorControlHighlight"
-                />
+                android:spinnerMode="dropdown"
+                tools:ignore="TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplicationkotlin.db.AdminSQLiteOpenHelper
 import com.example.myapplicationkotlin.model.Productos
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
@@ -20,35 +21,37 @@ import com.google.android.material.textview.MaterialTextView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btnCalcular: MaterialButton
-    private lateinit var txtPrecio: TextInputEditText
-    private lateinit var tvResul: MaterialTextView
-    private lateinit var spLista: Spinner
-    private lateinit var listpro: ListView
-    private lateinit var textNombre: TextInputEditText
-
-    private lateinit var productoList: MutableList<String>
-    private lateinit var adapterlistView: ArrayAdapter<String>
+    lateinit var btnCalcular: Button
+    lateinit var txtPrecio: EditText
+    lateinit var txtNombre:EditText
+    lateinit var tvResul: TextView
+    lateinit var spLista:Spinner
+    lateinit var listPro:ListView
+    lateinit var btnbuscarProducto: Button
+    lateinit var productosList:MutableList<String>
+    lateinit var adapterListView:ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
-        // Inicializar vistas
-        cargarR()
-
-        // Configurar el Spinner
-        val listaPaises = arrayOf("USA", "BOL", "ESP")
-        val adaptador1 = ArrayAdapter(this, android.R.layout.simple_spinner_item, listaPaises)
-        spLista.adapter = adaptador1
-
-        // Configurar el botón
-        btnCalcular.setOnClickListener {
-            calcularIVA()
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
 
-        // Cargar datos iniciales
-        cargarListaproducto()
+        //codigo
+        cargarR()
+        estadoOnclick()
+        cargarListaProducto()
+
+        //cargar lista de datos en spinner
+        val listaPaises = arrayOf("USA", "BOL", "ESP")
+        val adaptador1 = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listaPaises)
+        spLista.adapter = adaptador1
+
+
     }
 
     private fun cargarR() {
@@ -56,40 +59,44 @@ class MainActivity : AppCompatActivity() {
         txtPrecio = findViewById(R.id.txtProducto)
         tvResul = findViewById(R.id.tvResultado)
         spLista = findViewById(R.id.spPaises)
-        listpro = findViewById(R.id.listaProductos)
-        textNombre = findViewById(R.id.txtNombre)
+        listPro = findViewById(R.id.listaProductos)
+        txtNombre = findViewById(R.id.textNombre)
+        btnbuscarProducto= findViewById(R.id.btnbuscarproducto)
     }
 
-    private fun calcularIVA() {
-        // Obtener el nombre y el precio ingresado por el usuario
-        val nombreProducto = textNombre.text.toString()
-        val precioProducto = txtPrecio.text.toString().toDoubleOrNull()
+    fun estadoOnclick(){
+        btnCalcular.setOnClickListener(){
 
-        if (precioProducto == null) {
-            Toast.makeText(this, "Por favor ingrese un precio válido", Toast.LENGTH_SHORT).show()
-            return
-        }
+            val laptop = Productos(txtNombre.text.toString(), txtPrecio.text.toString().toDouble())
+            //val datosRe : Double = laptop.calIVA()
 
-        val iva = when (spLista.selectedItem?.toString()) {
-            "USA" -> precioProducto * 0.03
-            "BOL" -> precioProducto * 0.13
-            "ESP" -> precioProducto * 0.05
-            else -> {
-                Toast.makeText(this, "Por favor seleccione un país válido", Toast.LENGTH_SHORT).show()
-                return
+            when(spLista.selectedItem.toString()){
+                "USA"-> productosList.add(laptop.nombre + ", " +laptop.precio+ "IVA: "+laptop.calIVA(0.03).toString())
+                "BOL"-> productosList.add(laptop.nombre + ", " +laptop.precio+ "IVA: "+laptop.calIVA(0.13).toString())
+                "ESP"-> productosList.add(laptop.nombre + ", " +laptop.precio+ "IVA: "+laptop.calIVA(0.05).toString())
             }
+            listPro.adapter=adapterListView
+
         }
+        btnbuscarProducto.setOnClickListener(){
+            val admin =AdminSQLiteOpenHelper(this, "administracion", null, 1)
+            val bd = admin.writableDatabase
 
-        // Añadir el resultado a la lista
-        val resultado = "${nombreProducto}, \$${precioProducto}, IVA: \$${iva}"
-        productoList.add(resultado)
-        adapterlistView.notifyDataSetChanged()
-        tvResul.text = resultado
+            val fila = bd.rawQuery("select nombre,precio from productos where id_productos=${txtNombre.text.toString()}", null)
+            if (fila.moveToFirst()) {
+                txtNombre.setText(fila.getString(0))
+                txtPrecio.setText(fila.getString(1))
+            } else
+                Toast.makeText(this, "No existe un artículo con dicho código",  Toast.LENGTH_SHORT).show()
+            bd.close()
+        }
     }
 
-    private fun cargarListaproducto() {
-        productoList = mutableListOf()
-        adapterlistView = ArrayAdapter(this, android.R.layout.simple_list_item_1, productoList)
-        listpro.adapter = adapterlistView
+    fun cargarListaProducto(){
+        //val productos = arrayOf("LAPTOP", "MOUSE")
+        productosList = mutableListOf("3500")
+        adapterListView = ArrayAdapter(this, android.R.layout.simple_list_item_1,productosList)
+        listPro.adapter=adapterListView
     }
+
 }
