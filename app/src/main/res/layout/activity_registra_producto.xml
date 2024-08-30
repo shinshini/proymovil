@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/color5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistraProductos">
@@ -12,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
+        android:background="@color/color5"
         android:fontFamily="sans-serif-black"
         android:text="PRODUCTOS"
         android:textAlignment="center"
@@ -43,6 +45,7 @@
                 android:id="@+id/txtCodigoProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border"
                 android:hint="CODIGO.."
 
                 android:inputType="textEmailAddress" />
@@ -58,6 +61,7 @@
                 android:id="@+id/txtNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border"
                 android:hint="Nombre"
 
                 android:inputType="textEmailAddress" />
@@ -74,6 +78,7 @@
                 android:id="@+id/txtPrecio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border"
                 android:hint="Precio"
 
                 android:inputType="textEmailAddress" />
