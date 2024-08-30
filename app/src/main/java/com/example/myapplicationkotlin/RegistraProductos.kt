@@ -50,8 +50,8 @@ class RegistraProductos: AppCompatActivity() {
             val objeto = Productos(txtNom.text.toString(),txtPrecio.text.toString().toDouble())
 
             registro.put("id_productos", txtCodigo.text.toString())
-            registro.put("nombre", txtNom.text.toString())
-            registro.put("precio", txtPrecio.text.toString())
+            registro.put("nombre", objeto.getNombre())
+            registro.put("precio", objeto.getPrecio())
             db.insert("productos", null, registro)
             db.close()
             txtCodigo.setText("")

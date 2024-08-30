@@ -67,9 +67,9 @@ class MainActivity : AppCompatActivity() {
             //val datosRe : Double = laptop.calIVA()
 
             when(spLista.selectedItem.toString()){
-                "USA"-> productosList.add(laptop.nombre + ", " +laptop.precio+ "IVA: "+laptop.calIVA(0.03).toString())
-                "BOL"-> productosList.add(laptop.nombre + ", " +laptop.precio+ "IVA: "+laptop.calIVA(0.13).toString())
-                "ESP"-> productosList.add(laptop.nombre + ", " +laptop.precio+ "IVA: "+laptop.calIVA(0.05).toString())
+                "USA"-> productosList.add(laptop.getNombre() + ", " +laptop.getPrecio()+ "IVA: "+laptop.calIVA(0.03).toString())
+                "BOL"-> productosList.add(laptop.getNombre()+ ", " +laptop.getPrecio()+ "IVA: "+laptop.calIVA(0.13).toString())
+                "ESP"-> productosList.add(laptop.getNombre()+ ", " +laptop.getPrecio()+ "IVA: "+laptop.calIVA(0.05).toString())
             }
             listPro.adapter=adapterListView
 
