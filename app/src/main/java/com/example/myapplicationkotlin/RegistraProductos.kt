@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 import com.example.myapplicationkotlin.db.AdminSQLiteOpenHelper
+import com.example.myapplicationkotlin.model.Productos
 
 class RegistraProductos: AppCompatActivity() {
     lateinit var btnRegistroPro:Button
@@ -44,6 +45,9 @@ class RegistraProductos: AppCompatActivity() {
             val adminsql = AdminSQLiteOpenHelper(this,"administracion",null,1)
             val db = adminsql.writableDatabase
             val registro = ContentValues()
+
+            //realizando la intancia del objeto
+            val objeto = Productos(txtNom.text.toString(),txtPrecio.text.toString().toDouble())
 
             registro.put("id_productos", txtCodigo.text.toString())
             registro.put("nombre", txtNom.text.toString())
