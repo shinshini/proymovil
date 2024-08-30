@@ -12,12 +12,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplicationkotlin.db.AdminSQLiteOpenHelper
 import com.example.myapplicationkotlin.model.Productos
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textview.MaterialTextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -60,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         tvResul = findViewById(R.id.tvResultado)
         spLista = findViewById(R.id.spPaises)
         listPro = findViewById(R.id.listaProductos)
-        txtNombre = findViewById(R.id.textNombre)
+        txtNombre = findViewById(R.id.txtNombre)
         btnbuscarProducto= findViewById(R.id.btnbuscarproducto)
     }
 

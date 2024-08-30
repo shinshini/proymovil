@@ -28,7 +28,7 @@
             android:textSize="25dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textNombre"
+            android:id="@+id/fail1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="NOMBRE DE PRODUCTO"
@@ -42,7 +42,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textPrecio"
+            android:id="@+id/file2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="PRECIO DE PRODUCTO"
@@ -59,7 +59,7 @@
             android:id="@+id/btnbuscarproducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+
             android:background="@drawable/caja"
             android:fontFamily="sans-serif-black"
             android:text="Buscar Producto"
@@ -70,6 +70,8 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+
             android:text="LIsta de Paises:"
             android:textSize="20sp" />
 
@@ -77,12 +79,16 @@
             android:id="@+id/textPaises"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:hint="Seleccionar País">
 
             <Spinner
                 android:id="@+id/spPaises"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:backgroundTint="?attr/colorControlHighlight"
                 android:spinnerMode="dropdown"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -108,8 +114,8 @@
 
     <ListView
         android:id="@+id/listaProductos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="412dp"
+        android:layout_height="267dp"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
