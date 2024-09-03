@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
     fun estadoOnclick(){
         btnCalcular.setOnClickListener(){
 
-            val laptop = Productos(txtNombre.text.toString(), txtPrecio.text.toString().toDouble())
+            val laptop = Productos(txtNombre.text.toString(), txtPrecio.text.toString().toDouble(),0)
             //val datosRe : Double = laptop.calIVA()
 
             when(spLista.selectedItem.toString()){

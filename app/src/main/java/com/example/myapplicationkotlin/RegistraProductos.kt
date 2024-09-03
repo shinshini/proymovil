@@ -47,9 +47,9 @@ class RegistraProductos: AppCompatActivity() {
             val registro = ContentValues()
 
             //realizando la intancia del objeto
-            val objeto = Productos(txtNom.text.toString(),txtPrecio.text.toString().toDouble())
+            val objeto = Productos(txtNom.text.toString(),txtPrecio.text.toString().toDouble(),txtCodigo.text.toString().toInt())
 
-            registro.put("id_productos", txtCodigo.text.toString())
+            registro.put("id_productos", objeto.getProductos())
             registro.put("nombre", objeto.getNombre())
             registro.put("precio", objeto.getPrecio())
             db.insert("productos", null, registro)
