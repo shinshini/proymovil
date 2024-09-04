@@ -14,10 +14,10 @@ import com.example.myapplicationkotlin.db.AdminSQLiteOpenHelper
 import com.example.myapplicationkotlin.model.Productos
 
 class RegistraProductos: AppCompatActivity() {
-    lateinit var btnRegistroPro:Button
-    lateinit var txtNom:EditText
-    lateinit var txtPrecio:EditText
-    lateinit var txtCodigo:EditText
+   lateinit var btnRegistroPro:Button
+     lateinit var txtNom:EditText
+     lateinit var txtPrecio:EditText
+      lateinit var txtCodigo:EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,14 +32,14 @@ class RegistraProductos: AppCompatActivity() {
         estadoBoton()
     }
 
-    fun cargarR(){
+     fun cargarR(){
         btnRegistroPro=findViewById(R.id.btnRegistroProducto)
         txtNom = findViewById(R.id.txtNombre)
         txtPrecio = findViewById(R.id.txtPrecio)
         txtCodigo = findViewById(R.id.txtCodigoProducto)
     }
 
-    fun estadoBoton(){
+     fun estadoBoton(){
         btnRegistroPro.setOnClickListener{
 
             val adminsql = AdminSQLiteOpenHelper(this,"administracion",null,1)

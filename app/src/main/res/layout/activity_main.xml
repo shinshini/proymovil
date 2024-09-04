@@ -66,6 +66,25 @@
             android:textColor="@color/black"
             app:backgroundTint="@null" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textProduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Seleccionar País"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <Spinner
+                android:id="@+id/spProductos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorControlHighlight"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:spinnerMode="dropdown"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
